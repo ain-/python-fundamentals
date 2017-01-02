@@ -1,8 +1,23 @@
+"""Retrieve and print words from a URL.
+
+Usage:
+
+    python3 words.py <URL>
+"""
 import sys
 from urllib.request import urlopen
 
 
 def fetch_words(url):
+    """Fetch a list of words from a URL.
+    
+    Args:
+        url: The URL of a UTF-8 text document.
+
+    Returns:
+        A list of strings containing the words from
+        the document.
+    """
     with urlopen(url) as story:
         story_words = []
         for line in story:
